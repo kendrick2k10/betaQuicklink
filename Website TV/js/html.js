@@ -1,5 +1,3 @@
-
-
 const bodyHTML =   `
 <div id="overlay">
     <div class="overlayContainer">

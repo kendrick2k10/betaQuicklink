@@ -331,7 +331,11 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[0].title}
+                  </a></h5>
+              
+                </div>  
               </div>
               <div class="col-md-3 col-6">
                 <div class="trend_2im clearfix position-relative">
@@ -346,7 +350,10 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[1].title}</a></h5>
+                  
+                </div>  
               </div>
               <div class="col-md-3 col-6">
                 <div class="trend_2im clearfix position-relative">
@@ -361,7 +368,10 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[2].title}</a></h5>
+  
+                </div>  
               </div>
   
               <div class="col-md-3 col-6">
@@ -377,7 +387,10 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[3].title}</a></h5>
+  
+                </div>  
               </div>
   
             </div>
@@ -398,7 +411,10 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[4].title}</a></h5>
+                
+                </div>  
               </div>
               <div class="col-md-3 col-6">
                 <div class="trend_2im clearfix position-relative">
@@ -413,7 +429,10 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[5].title}</a></h5>
+                  
+                </div>  
               </div>
               <div class="col-md-3 col-6">
                 <div class="trend_2im clearfix position-relative">
@@ -428,7 +447,11 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[6].title}</a></h5>
+            
+  
+                </div>  
               </div>
               <div class="col-md-3 col-6">
                 <div class="trend_2im clearfix position-relative">
@@ -443,7 +466,11 @@ function sortLatestRender() {
                   <span class="fs-1"><a class="col_red" href="#"><i class="fa fa-youtube-play"></i></a></span>
                 </div>
                 </div>
-
+                <div class="trend_2ilast  p-3 clearfix">
+                  <h5><a class="col_red latestTitle" href="#">${trendItems[7].title}</a></h5>
+                
+              
+                </div>  
               </div>
             </div>
           </div>
@@ -470,11 +497,7 @@ function topRatedRender() {
     let bool = true
     let bool2 = true
     let bool3 = true
-    let match;
-    let sypnosis
 
-    const regex = /([^:]+): Directed by ([^\.]+)\. With.*?\. (.*?)\./g;
-  
     const Subcategory = [
       "action",
       "animation",
@@ -497,16 +520,7 @@ function topRatedRender() {
     topRatedGenre("War")
 
     for (let i = 0; i < category.length; i++) {
-
-      const regex = /(?<Title>[\w\s:]+):\s(?:(?:Created|Directed)\sby\s(?<Director>[^.]+)\.\s)?With\s(?<Actors>[^.]+)\.\s(?<Sypnosis>[^.]+)\./g;
-      
-      sypnosis = (match = regex.exec(category[i].description)) !== null ? sypnosis = match.groups.Sypnosis.trim(): category[i].description
-      
-      
-      
-      
       if (bool) {
-        
         firstLoop = `          
         <div class="col-md-6">
                     <div class="popular_2i1 row">
@@ -527,7 +541,7 @@ function topRatedRender() {
                             <h5><a class="col_red" href="#">${category[i].title}</a></h5>
                             <h6>${category[i].genre}</h6>
                             <h6> Imdb ${category[i].ratings}  <span class="ms-2"><i class="fa fa-star col_red me-1"></i></span> Year : ${category[i].year} <span class="ms-2">Runtime: ${category[i].duration}</span></h6>
-                            <p>${sypnosis}</p>
+                            <p>${category[i].description}</p>
                             <h6 class="mb-0"><a class="button" href="${category[i].streamlink}"> Watch Stream </a></h6>
                         </div>
                       </div>
@@ -555,7 +569,7 @@ function topRatedRender() {
             <h5><a class="col_red" href="#">${category[i].title}</a></h5>
             <h6>${category[i].genre}</h6>
             <h6> Imdb ${category[i].ratings}  <span class="ms-2"><i class="fa fa-star col_red me-1"></i></span> Year : ${category[i].year} <span class="ms-2">Runtime: ${category[i].duration}</span></h6>
-            <p>${sypnosis}</p>
+            <p>${category[i].description}</p>
             <h6 class="mb-0"><a class="button" href="${category[i].streamlink}"> Watch Stream </a></h6>
           </div>
       </div>
@@ -583,7 +597,7 @@ function topRatedRender() {
                   <h5><a class="col_red" href="#">${category[i].title}</a></h5>
                   <h6>${category[i].genre}</h6>
                   <h6> Imdb ${category[i].ratings}  <span class="ms-2"><i class="fa fa-star col_red me-1"></i></span> Year : ${category[i].year} <span class="ms-2">Runtime: ${category[i].duration}</span></h6>
-                  <p>${sypnosis}</p>
+                  <p>${category[i].description}</p>
                   <h6 class="mb-0"><a class="button" href="${category[i].streamlink}"> Watch Stream </a></h6>
                 </div>
               </div>
@@ -612,7 +626,7 @@ function topRatedRender() {
                   <h5><a class="col_red" href="#">${category[i].title}</a></h5>
                   <h6>${category[i].genre}</h6>
                   <h6> Imdb ${category[i].ratings}  <span class="ms-2"><i class="fa fa-star col_red me-1"></i></span> Year : ${category[i].year} <span class="ms-2">Runtime: ${category[i].duration}</span></h6>
-                  <p>${sypnosis}</p>
+                  <p>${category[i].description}</p>
                   <h6 class="mb-0"><a class="button" href="${category[i].streamlink}"> Watch Stream </a></h6>
                 </div>
               </div>
@@ -660,7 +674,7 @@ function topRatedRender() {
                   <h5><a class="col_red" href="#">${category[i].title}</a></h5>
                   <h6>${category[i].genre}</h6>
                   <h6> Imdb ${category[i].ratings}  <span class="ms-2"><i class="fa fa-star col_red me-1"></i></span> Year : ${category[i].year} <span class="ms-2">Runtime: ${category[i].duration}</span></h6>
-                  <p>${sypnosis}</p>
+                  <p>${category[i].description}</p>
                   <h6 class="mb-0"><a class="button" href="${category[i].streamlink}"> Watch Stream </a></h6>
                 </div>
               </div>
@@ -865,8 +879,9 @@ function topRatedRender() {
 
   function eventListener() {
 
+
     const navbar_height = document.querySelector('.navbar').offsetHeight;
-    document.getElementById("center").style.marginTop = navbar_height + "px"
+
 
     if (window.innerWidth <= 767) {
       document.querySelector(".searchShow").style.display = "none";
@@ -922,12 +937,13 @@ function topRatedRender() {
       document.querySelector(".overlayContainer .eyeC .eyeSize").style.display = "none";
     }
   }
-
   document.querySelector(".eyeSize").onclick = evt => {
     seeMore()
   }
 
+
   }
+
 
   async function download(fileID) {
     const url = `https://api.streamtape.com/file/dlticket?file=${fileID}&login=50403a0e358c1473d1fc&key=VGg4qRMoLytKrw2`
@@ -943,6 +959,7 @@ async function downloadLink(file, ticket) {
     const url = `https://api.streamtape.com/file/dl?file=${file}&ticket=${ticket}`
     let request = await fetch(url)
     let response = await request.json()
-    console.log(response.status)
+    alert(response.status)
     document.querySelector("#watch video").src = response.result.url
+
 }
